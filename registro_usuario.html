@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="alerta"></div>
+    <div class="container justify-content-center">
+        <div class="formulario-reg">
+            <div class="card-header text-center text-white ">
+                <strong id="titulo">
+                     <span>Registro de Nuevo usuario</span>
+                </strong>
+            </div>
+            <form id="formulario" method="POST" enctype="multipart/form-data" autocomplete="off">
+                <div id="contenido" class="container mgv-20">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="nombre" id="nombre" required
+                                    placeholder="Nombre" aria-describedby="basic-addon1" pattern="[A-Za-z]{1}[A-Za-z( ){1}]{1,49}" title="No se admiten numeros ni sinbolos.">
+                                <div class=" input-group-prepend">
+                                    <span class="input-group-text bg-transparent"><i class="fa color fa-user"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="apellido" id="apellido" required
+                                    placeholder="Apellido" aria-describedby="basic-addon1"pattern="[A-Za-z]{1}[A-Za-z(
+                                    ){1}]{1,49}"
+                                    title="No se admiten numeros ni sinbolos.">
+                                <div class=" input-group-prepend">
+                                    <span class="input-group-text bg-transparent"><i class="fa color fa-user"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"></div>
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <div class=" input-group-prepend">
+                                    <span class="input-group-text bg-transparent">Fecha de nacimiento</span>
+                                </div>
+                                <input type="date" class="form-control" name="fecha" id="fecha" style="color: black;" required
+                                    placeholder="Fecha de nacimiento" aria-describedby="basic-addon1">
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <input type="tel" class="form-control" name="telefono" id="telefono" required
+                                    placeholder="Telefono" aria-describedby="basic-addon1"pattern="(\+[1-9]{2}[0-9]{7,15})|([0-9]{7,15})"
+                                    title="Ingresa numero valido, puede espesificar la region antes del numero.">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-transparent"><i class="fa color fa-phone"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" name="correo" id="correo" required
+                                    placeholder="Correo" aria-describedby="basic-addon1">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-transparent"><i class="fa color fa-envelope"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" name="password" id="password" required
+                                    placeholder="Contraseña" aria-describedby="basic-addon1" pattern=".{8,16}" title="La contraseña debe tener minimo 8 caracteres, maximo 16.">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-transparent"><i class="fa color fa-lock"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" name="password-re" id="password-re" required
+                                    placeholder="Verificar" aria-describedby="basic-addon1" title="Vuelve a escribir la contraseña.">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-transparent"><i class="fa color fa-lock"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col">
+                            <input type="submit" class="btn pull-right btn-primary" name="submit" id="submit" value="Registrar">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/registro_usuario.js"></script>
+</body>
+</html>

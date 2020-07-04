@@ -1,0 +1,75 @@
+body{
+    background-image: url("../images/table_background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.formulario-reg{
+    margin: 0 auto;
+    width: 70%;
+    border: 1px solid;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+    margin-top: 15%;
+    box-shadow: 5px 8px 10px black;
+}
+
+.formulario-reg input{
+    opacity: 1;
+    background-color: #d3d3d35e;
+    color: black;
+}
+
+.card-header.text-center.text-white{
+    background-color: black;
+    border-radius: 0%;
+    text-transform: capitalize;
+    text-align-last: left;
+    font-size: larger;
+}
+
+.formulario-log{
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+    margin-top: 30%;
+    box-shadow: 5px 8px 10px black;
+}
+
+.formulario-log input {
+    opacity: 1;
+    background-color: #d3d3d35e;
+    color: black;
+}
+
+.formulario-log .row{
+     margin-left: 20px;
+     margin-right: 20px;
+}
+
+.mgv-20{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.fa.color{
+   color: black; 
+}
+
+.alerta {
+    background-color: #E74F4F;
+    position: absolute;
+    top: 0;
+    padding: 10px 0;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
