@@ -5,7 +5,17 @@ body{
     background-size: cover;
 }
 
+.nav-shadow {
+    box-shadow: 0px 1px 8px black;
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
+img.logo{
+    border-radius: 100%;
+    border: 1px solid white;
+    margin-left: 1rem;
+    
+}
 .formulario-reg{
     margin: 0 auto;
     width: 70%;
@@ -73,3 +83,4 @@ body{
     text-align: center;
     display: none;
 }
+
