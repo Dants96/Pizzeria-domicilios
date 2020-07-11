@@ -9,7 +9,7 @@ function validarPassword(){
 function validarFecha(){
     var date = new Date($('#fecha').val());
     var date_cur = new Date()
-    if (date.getFullYear() >= (date_cur.getFullYear() - 5)){
+    if (date.getFullYear() >= (date_cur.getFullYear() - 12)){
         $(".alerta").html("<span>Fecha Incorrecta, aun no naces o eres muy joven.<span>");
         $(".alerta").slideDown("slow");
         return false;
@@ -20,6 +20,7 @@ function validarData(){
     var validados = [validarFecha(), validarPassword()];
     var valido = true;
     $("#submit").val("Validando...");
+    $("#submit").attr("disabled", true);
     validados.forEach(element => {
         valido = valido && element;
     });
@@ -27,7 +28,8 @@ function validarData(){
         setTimeout(function () {
             $(".alerta").slideUp("slow");
             $("#submit").val("Registrar");
-        }, 3000);
+            $("#submit").attr("disabled", false);
+        }, 8000);
     }
     return valido;
 }
@@ -42,14 +44,16 @@ $(document).on('submit', '#formulario', function (event) {
             data: $(this).serialize(),
             beforeSend: function () {
                 $("#submit").val("Validando...");
+                $("#submit").attr("disabled", true);
             },
             processData: false
         })
             .done(function (res) {
                 console.log("done! ajax registro de usuario");
+                alert(res);
                 var respuesta = JSON.parse(res);
                 if (!respuesta.error) {
-                    $('#contenido').html("<div class=\"alert alert-success\" role=\"alert\"><h4 class='alert-heading'>Registro Exitoso! </h4><p>Usuario fue creado y registrado, Bienvenido .</p></div>");
+                    $('#contenido').html("<div class=\"alert alert-success\" role=\"alert\"><h4 class='alert-heading'>Registro Exitoso! </h4><p>Usuario fue creado y registrado, Bienvenido"+ $('#nombre').val() + " " + $('#apellido').val()+".</p></div>");
                     $("#submit").val("Registrar");
                 } else {
                     $(".alerta").html("<span>" + respuesta.msg + "<span>");
@@ -57,7 +61,8 @@ $(document).on('submit', '#formulario', function (event) {
                     setTimeout(function () {
                         $(".alerta").slideUp("slow");
                         $("#submit").val("Registrar");
-                    }, 3000);
+                        $("#submit").attr("disabled", false);
+                    }, 8000);
                 }
             })
             .fail(function () {
