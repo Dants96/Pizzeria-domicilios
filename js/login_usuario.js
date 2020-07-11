@@ -6,6 +6,7 @@ $(document).on('submit', '#formulario', function (event) {
             data: $(this).serialize(),
             beforeSend: function () {
                 $("#submit").val("Validando...");
+                $("#submit").attr("disabled", true);
             },
             processData: false
         })
@@ -13,14 +14,19 @@ $(document).on('submit', '#formulario', function (event) {
                 console.log("done! ajax registro de usuario");
                 var respuesta = JSON.parse(res);
                 if (!respuesta.error) {
-                    
+                    alert("sesion iniciada");
+                    location.href = "/Proyectofinal/index.html"
                 } else {
                     $(".alerta").html("<span>" + respuesta.msg + "<span>");
                     $(".alerta").slideDown("slow");
+                    setTimeout(function(){
+                        $("#submit").val("Ingresar");
+                        $("#submit").attr("disabled", false);
+                    }, 1000);
                     setTimeout(function () {
                         $(".alerta").slideUp("slow");
-                        $("#submit").val("Registrar");
-                    }, 3000);
+                        
+                    }, 6000);
                 }
             })
             .fail(function () {
