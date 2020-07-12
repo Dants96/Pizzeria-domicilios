@@ -5,7 +5,7 @@ $(document).on('submit', '#formulario', function (event) {
             type: 'POST',
             data: $(this).serialize(),
             beforeSend: function () {
-                $("#submit").val("Validando...");
+                $("#submit").html("<span class=\"fa fa-spinner fa-spin\"></span> Validando");
                 $("#submit").attr("disabled", true);
             },
             processData: false
@@ -14,13 +14,12 @@ $(document).on('submit', '#formulario', function (event) {
                 console.log("done! ajax registro de usuario");
                 var respuesta = JSON.parse(res);
                 if (!respuesta.error) {
-                    alert("sesion iniciada");
                     location.href = "/Proyectofinal/index.html"
                 } else {
                     $(".alerta").html("<span>" + respuesta.msg + "<span>");
                     $(".alerta").slideDown("slow");
                     setTimeout(function(){
-                        $("#submit").val("Ingresar");
+                        $("#submit").html("Ingresar");
                         $("#submit").attr("disabled", false);
                     }, 1000);
                     setTimeout(function () {

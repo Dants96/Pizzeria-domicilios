@@ -6,29 +6,39 @@
     <title>HOME</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg nav-shadow navbar-dark">
-        <a href="index.html"><img class="logo" src="images/pizza_logo_white.png" width="60" height="50"></a>
+            <a class="nav-link-logo navbar-brand" href="index.html">
+                <img class="logo" src="images/pizza_logo_black.svg" width="45" height="45">
+            </a>
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link-logo navbar-brand" href="index.html">Inicio</a> 
+                </li>
+            </ul>
+            
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="nav-item">
+                    <a class="nav-link navbar-brand" href="#">Menú</a>
+                </li>
+            </ul>
             <ul class="nav navbar-nav ml-auto">
-                <li id="vr_regu" class="nav-item">
-
-                </li>
-                <li id="vr_logu" class="nav-item">
-
-                </li>
-                <li id="salir" class="nav-item">
-
-                </li>
-
+                <li id="vr_carrito" class="nav-item"></li>
+                <li id="vr_regu" class="nav-item"></li>
+                <li id="vr_logu" class="nav-item"></li>
+                <li id="vr_peru" class="nav-item dropdown"></li>
             </ul>
         </div>
+        
     </nav>
+    <div class="succes"></div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">

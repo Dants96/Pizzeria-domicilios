@@ -84,6 +84,8 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['fecha']
     $validado = validateData();
     if(!$validado['error']){
         registrarData();
+        require 'init_session.php';
+        initSession($_POST['nombre'], $_POST['apellido'], $_POST['telefono'], $_POST['correo'] ,$_POST['fecha']);
     }else{
         echo json_encode(array('error' => true, 'msg' => $validado['msg']));
     }

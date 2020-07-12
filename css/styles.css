@@ -12,9 +12,27 @@ body{
 
 img.logo{
     border-radius: 100%;
-    border: 1px solid white;
+    border: 1px solid black;
+    background-color: white;
     margin-left: 1rem;
     
+}
+
+img.logo:hover{
+    background-color: #ffffffb0;
+}
+
+.nav-item .nav-link-logo.navbar-brand{
+padding-left: 8px;
+padding-right: 8px;
+}
+
+.dropdown-menu{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.dropdown-item{
+    color: white;
 }
 .formulario-reg{
     margin: 0 auto;
@@ -25,6 +43,18 @@ img.logo{
     margin-top: 15%;
     box-shadow: 5px 8px 10px black;
 }
+
+.input-icon{
+    position: absolute;
+    left: 3px;
+    top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+  }
+  input{
+    padding-left: 17px;
+  }
+  .input-wrapper{
+    position: relative;
+  }
 
 .formulario-reg input{
     opacity: 1;
@@ -75,6 +105,18 @@ img.logo{
 .alerta {
     background-color: #E74F4F;
     position: absolute;
+    top: 0;
+    padding: 10px 0;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.succes {
+    background-color: #54e74f;
+    position: inherit;
     top: 0;
     padding: 10px 0;
     border-radius: 0 0 5px 5px;

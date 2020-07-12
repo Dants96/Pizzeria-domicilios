@@ -17,8 +17,8 @@
                     }else{
                         $usuario = $consulta->get_result();
                         $usuario = $usuario->fetch_assoc();
-                        session_start();
-                        $_SESSION['usuario'] = array('nombre' => $usuario['usr_nombre'], 'apellido' => $usuario['usr_apellido'], 'telefono' => $usuario['usr_telefono'], 'email' => $usuario['usr_email'], 'fecha' => $usuario['usr_fecha'], 'req' => 0);
+                        require 'init_session.php';
+                        initSession($usuario['usr_nombre'], $usuario['usr_apellido'], $usuario['usr_telefono'], $usuario['usr_email'], $usuario['usr_fecha']);
                         echo(json_encode(array('error' => false, 'msg' => '')));
                     }
                 }else{
