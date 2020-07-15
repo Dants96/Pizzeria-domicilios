@@ -149,6 +149,11 @@ img.banner-logo{
     color: rgb(143, 143, 143);
 }
 
+.banner-jumbo a:hover{
+    transition: ease;
+    color: #E74F4F;
+}
+
 .fade-load1 {
     display: none;
 }

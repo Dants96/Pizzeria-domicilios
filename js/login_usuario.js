@@ -11,10 +11,10 @@ $(document).on('submit', '#formulario', function (event) {
             processData: false
         })
             .done(function (res) {
-                console.log("done! ajax registro de usuario");
+                console.log("done! ajax login de usuario");
                 var respuesta = JSON.parse(res);
                 if (!respuesta.error) {
-                    location.href = "/Proyectofinal/index.html"
+                    window.history.back();
                 } else {
                     $(".alerta").html("<span>" + respuesta.msg + "<span>");
                     $(".alerta").slideDown("slow");
@@ -29,10 +29,10 @@ $(document).on('submit', '#formulario', function (event) {
                 }
             })
             .fail(function () {
-                console.log("error ajax registro de usuario");
+                console.log("error ajax login de usuario");
             })
             .always(function () {
-                console.log("complete ajax registro de usuario");
+                console.log("complete ajax login de usuario");
             })
 });
 
