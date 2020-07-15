@@ -31,7 +31,7 @@ $(document).ready(function () {
                 });
 
                 if(usuario.req == 1){
-                    $(".succes").html("<span>sección iniciada, hola " + usuario.nombre + " " + usuario.apellido + ".<span>");
+                    $(".succes").html("<span>sesión iniciada, hola " + usuario.nombre + " " + usuario.apellido + ".<span>");
                     $(".succes").slideDown("slow");
                     setTimeout(function(){
                         $(".succes").slideUp("slow");

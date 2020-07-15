@@ -126,3 +126,43 @@ padding-right: 8px;
     display: none;
 }
 
+img.banner-logo{
+    width: 30%;
+    height: 30%;
+    margin: 8px;
+    margin-bottom: 20px;
+    border-radius: 100%;
+    border: 2px solid white;
+}
+
+
+.banner-jumbo{
+    border-radius: 0%;
+    height: 80%;
+    margin-top: 6%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 5px solid rgba(255, 255, 255, 0.8);
+}
+
+.banner-jumbo a{
+    text-decoration: none;
+    color: rgb(143, 143, 143);
+}
+
+.fade-load1 {
+    display: none;
+}
+.fade-load2 {
+    display: none;
+}
+.fade-load2 {
+    display: none;
+}
+
+.no-select {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none; 
+}
