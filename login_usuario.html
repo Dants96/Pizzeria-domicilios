@@ -11,14 +11,20 @@
 </head>
 <body>
     <div class="alerta"></div>
+    <div class="info"><span>Primero debes ingresar con tu usuario</span></div>
     <div class="container cesp">
         <div class="row  justify-content-center">
             <div class="col-6">
                 <div class="card formulario-log">
                     <div class="card-header text-center text-white">
-                        <strong id="titulo">
-                            <span>Iniciar Sesión</span>
-                        </strong>
+                        <div class="row justify-content-center">
+                            <a href="index.html"><img class="logo" src="images/pizza_logo_black.svg" width="50" height="50" style="margin-left: 0;"></a>
+                        </div>
+                        <div class="row justify-content-center">
+                            <strong id="titulo">
+                                <span>Iniciar Sesión</span>
+                            </strong>
+                        </div>
                     </div>
                     <form id="formulario" method="POST" class="needs-validation in-pd" style="margin-bottom: 20px;">
                         <div class="container mgv-20">
@@ -53,7 +59,7 @@
 
                     <div class="card-footer text-muted">
                         <div class="row d-flex justify-content-center">
-                            <div class="col" style="text-align: end; margin-top: auto; margin-bottom: auto;">
+                            <div class="col text-footer">
                                 Usuario nuevo ?
                             </div>
                             <div class="col ">
@@ -77,6 +83,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/autenticar_guest.js"></script>
     <script src="js/login_usuario.js"></script>
 </body>
 </html>

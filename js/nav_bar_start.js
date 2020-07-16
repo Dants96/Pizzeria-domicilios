@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-            url: 'php/get_session.php',
+            url: 'php/autenticar.php',
             type: 'GET',
         })
         .done(function (autenticado) {
@@ -30,7 +30,7 @@ $(document).ready(function () {
                         })
                 });
 
-                if(usuario.req == 1){
+                if(usuario.req <= 2){
                     $(".succes").html("<span>sesión iniciada, hola " + usuario.nombre + " " + usuario.apellido + ".<span>");
                     $(".succes").slideDown("slow");
                     setTimeout(function(){
