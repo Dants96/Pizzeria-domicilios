@@ -1,5 +1,34 @@
 function agregarCarrito(id, val){
-    alert("click en " + id);
+    let par = {"id" : id, "prc" : val};
+    $.ajax({
+        url: 'php/add2Carrito.php',
+        type: 'POST',
+        data: par,
+    })
+    .done(function(res){
+        let respuesta = JSON.parse(res);
+        if(!respuesta.error){
+            
+            $('.succes').html(respuesta.msg);
+            $('.succes').slideDown("slow");
+            setTimeout(function(){
+                $('.succes').slideUp("slow");    
+            }, 5000);
+        }else{
+            $('.alerta').slideUp("1000");
+            $('.alerta').html(respuesta.msg);
+            $('.alerta').slideDown("slow");
+            setTimeout(function(){
+                $('.alerta').slideUp("slow");    
+            }, 5000);
+        }
+    })
+    .fail(function(){
+    console.log("error ajax agregar al carrito");
+    })
+    .always(function(){
+    console.log("error ajax agregar al carrito");
+    })
 
 }
 
@@ -41,6 +70,8 @@ function estrellas(num){
     return stars;
 }
 
+
+
 $(document).ready(function(){
     $.ajax({
         url: 'php/getPizzas.php',
@@ -54,7 +85,7 @@ $(document).ready(function(){
             var menu = document.getElementById('menu_lista');
             for( var clave in pizzas){
                 if(String(clave) != 'error'){
-                    menu.innerHTML += '<div class="card card-pizza">'
+                    menu.innerHTML += '<div class="card card-pizza fade-load2">'
                         +'<img class="card-img-top img-fluid" src="'+ pizzas[clave][6] +'" alt="Card image cap">'                                                
                         +'<div class="card-body text-left">'
                             +'<h4 class="card-title text-center text-deco">'+ pizzas[clave][1] +'</h4>'

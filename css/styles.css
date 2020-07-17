@@ -12,6 +12,7 @@ body{
 
 .text-deco {
     font-family: scrypt;
+    font-size: xx-large;
 }
 
 .nav-shadow {
@@ -113,7 +114,7 @@ img.logo:hover{
 
 .alerta {
     background-color: #E74F4F;
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     padding: 10px 0;
     border-radius: 0 0 5px 5px;
@@ -125,7 +126,7 @@ img.logo:hover{
 
 .info {
     background-color: #4f9ee7;
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     padding: 10px 0;
     border-radius: 0 0 5px 5px;
@@ -137,7 +138,7 @@ img.logo:hover{
 
 .succes {
     background-color: #54e74f;
-    position: inherit;
+    
     top: 0;
     padding: 10px 0;
     border-radius: 0 0 5px 5px;
@@ -191,6 +192,7 @@ img.banner-logo{
     -webkit-user-select: none;
     -o-user-select: none;
     user-select: none; 
+    pointer-events: none;
 }
 
 .card-footer .text-footer{
