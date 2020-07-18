@@ -31,7 +31,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
-                <li id="vr_carrito" class="nav-item"><a title="Carrito de pizzas" href="#"
+                <li id="vr_carrito" class="nav-item"><a title="Carrito de pizzas" href="carrito-pedir.html"
                         class="nav-link navbar-brand"><span class="fa fa-shopping-cart"></span></a></li>
                 <li id="vr_regu" class="nav-item"></li>
                 <li id="vr_logu" class="nav-item"></li>
@@ -50,9 +50,24 @@
                 <h2 class="display-4 header-menu">Pizza</h2>
                 <div id="menu_lista" class="card-columns"></div>
             </div>
-            <div class="col-lg-4 col-md-12">
-                <h2 class="header-menu display-4">Carrito</h2>
-
+            <div class="col-lg-4 col-md-12 ">
+                <div id="carrito-pos" class="position-fixed">
+                    <h2 class="header-menu display-4">Carrito</h2>                
+                    <div class="info-carrito">
+                        <small><b>Pizza Mediana (10 slices)</b></small>
+                        <small><b>Pizza Grande (12 slices)</b></small>
+                    </div>
+                    <div class="carrito-header">
+                        <div class="row adj-row"><div class="col-6">Pizza</div><div class="col">Precio</div><div class="col">Tamaño</div></div>
+                    </div>
+                    <div id="carrito_list" class="info-carrito" style="margin-bottom: 0;"></div>
+                    <div id="total_pedido" class="carrito-header" style="margin-bottom: 20px;"></div>
+                    <div class="alerta-carrito"><span></span></div>
+                    <div class="row justify-content-end adj-row">
+                        <button id="btn-borrar" class="btn-danger btn" style="margin-right: 5px;" disabled>Borrar</button>
+                        <a href="carrito-pedir.html"><button id="btn-pedir" disabled class="btn-primary btn">Perdir</button></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -67,7 +82,7 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/nav_bar_start.js"></script>
-    <script src="js/listar_pizzas.js"></script>
+    <script src="js/menu_scripts.js"></script>
     <script src="js/animaciones.js"></script>
 </body>
 

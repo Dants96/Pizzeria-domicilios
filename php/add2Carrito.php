@@ -30,7 +30,7 @@
                     }else{
                         session_start();
                         $_SESSION['carrito'][count($_SESSION['carrito'])] = array('ID'=>$pizza['ID'], 'nombre'=>$pizza['pz_nombre'], 'precio'=>$_POST['prc'], 'tamano'=>$tamano); 
-                        echo json_encode(array('error' => false, 'msg' => "Se agrego una pizza {$pizza['pz_nombre']} {$tama} al carrito."));
+                        echo json_encode(array('error' => false, 'msg' => "Se agrego una pizza {$pizza['pz_nombre']} {$tamano} al carrito."));
                     }                    
                 }else{echo json_encode(array('error' => true, 'msg' => 'Error! No se pudo agregar al carrito'));}              
                 
@@ -40,6 +40,4 @@
     }else{
         echo json_encode(array('error' => true, 'msg' => 'no se enviarion parametros'));
     }
-
-
 ?>

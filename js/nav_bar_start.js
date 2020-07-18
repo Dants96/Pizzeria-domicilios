@@ -30,8 +30,8 @@ $(document).ready(function () {
                         })
                 });
 
-                if(usuario.req <= 2){
-                    $(".succes").html("<span>sesión iniciada, hola " + usuario.nombre + " " + usuario.apellido + ".<span>");
+                if(usuario.req == 1){
+                    $(".succes").html("<span>Sesión iniciada, hola " + usuario.nombre + " " + usuario.apellido + ".<span>");
                     $(".succes").slideDown("slow");
                     setTimeout(function(){
                         $(".succes").slideUp("slow");
