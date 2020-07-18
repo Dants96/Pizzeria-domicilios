@@ -10,7 +10,7 @@ $(document).ready(function () {
                 +'<span class="fa fa-user-circle-o" style="margin-right: 4px;"></span>  Perfil</a>'
                 +'<div class="dropdown-menu dropdown-menu-right">'
                 +'<a class="dropdown-item active" href="#">'+ usuario.nombre +'</a>'
-                +'<a class="dropdown-item" href="#">Ver Perfil</a>'
+                +'<a class="dropdown-item" href="http://localhost/Proyectofinal/php/get_session.php">Ver Perfil</a>'
                 +'<a class="dropdown-item" href="#">Ver Pedidos</a>'
                 +'<div class="dropdown-divider"></div>'
                 +'<a id="salir" class="dropdown-item" href="#">salir</a></div>');

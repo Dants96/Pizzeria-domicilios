@@ -8,7 +8,7 @@
                         return('grande');
                         break;
                     case $tam_m:
-                        return('mediano');
+                        return('mediana');
                     default:
                         return false;
                         break;
