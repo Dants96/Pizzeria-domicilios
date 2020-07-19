@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 18-07-2020 a las 14:29:47
+-- Tiempo de generación: 19-07-2020 a las 04:01:52
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 7.4.1
 
@@ -44,8 +44,7 @@ CREATE TABLE `comentarios` (
 CREATE TABLE `detalles` (
   `pedido_id` int(11) NOT NULL,
   `producto_id` int(11) NOT NULL,
-  `cantidad` int(11) NOT NULL,
-  `producto_tamano` tinyint(4) NOT NULL
+  `producto_tamano` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -56,11 +55,13 @@ CREATE TABLE `detalles` (
 
 CREATE TABLE `pedidos` (
   `ID` int(11) NOT NULL,
-  `pdd_fecha` date NOT NULL,
+  `pdd_fecha` datetime NOT NULL,
   `usuario_id` int(11) NOT NULL,
-  `pdd_puntuacion` smallint(6) NOT NULL,
-  `pdd_completado` tinyint(1) NOT NULL,
-  `pdd_descuento` tinyint(4) NOT NULL
+  `pdd_puntuacion` smallint(6) DEFAULT NULL,
+  `pdd_completado` tinyint(1) DEFAULT NULL,
+  `pdd_descuento` tinyint(4) DEFAULT NULL,
+  `pdd_contacto` varchar(10) NOT NULL,
+  `pdd_total` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -163,7 +164,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `pizzas`

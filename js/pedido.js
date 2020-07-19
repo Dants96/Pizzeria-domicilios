@@ -1,3 +1,48 @@
+function showSuccessBaner(telefono, direccion, barrio){
+    $.ajax({
+        url: 'php/autenticar.php',
+        type: 'GET',
+    })
+    .done(function(res){
+        if(res){
+            let respuesta = JSON.parse(res);
+            $('#contenido_carrito_pedido').css("display", "none");
+            $('#contenido_carrito_pedido').html("");            
+            $('#contenido_carrito_pedido').html('<div id="contenido_carrito_pedido" class="content text-center text-white" style="width: 90%; margin: 0 auto; margin-top: 2%;">'
+            +'<div class="banner-jumbo jumbotron text-left text-white" style="margin-top: 4%;">'
+                +'<div class="col-md-auto fade-load2" style="display: block; ">'
+                    +'<h1 class="display-4 text-center text-success">Pedido realizado exitosamente.</h1>'
+                    +'<p class="lead">Pedido enviado a nombre de <b>'+ respuesta.nombre+' '+respuesta.apellido +'</b>, contacto <b>'+ telefono +'</b></p>'
+                    +'<p class="lead">Direccion de envuio: <b>'+ barrio +', '+ direccion +'</b>.</p>'
+                    +'<p class="lead"><a href="menu_view.html">Puedes ver tus pedidos aqui.</a></p>'
+                    +'<hr class="my-4">'
+                    +'<h2 class="display-5">Si tu pedido no llega antes de los 30 min recibes un 20% de descuento.</h2>'
+                    +'<p class="lead"><a href="#">Aplican condiciones y restricciones.</a></p>'
+                +'</div>'
+                +'<div class="banner-social text-center fade-load3">'
+                    +'<a href="#"><span class="fa fa-instagram"></span></a>'
+                   +'<a href="#"><span class="fa fa-facebook-square"></span></a>'
+                    +'<a href="#"><span class="fa fa-twitter-square"></span></a>'
+                +'</div></div></div>');
+            $('#contenido_carrito_pedido').fadeIn();
+        }
+        
+    })
+    .fail(function(){
+    console.log("error ajax cargar baneer succes");
+    })
+    .always(function(){
+    console.log("error ajax cargar banner succes");
+    })    
+
+
+
+
+    
+    
+}
+
+
 function mostrarCarrito(){
     $.ajax({
         url: 'php/getCarrito.php',
@@ -51,9 +96,9 @@ $(document).on('submit', '#formulario', function (event) {
     .done(function (res) {
         var respuesta = JSON.parse(res);
         if (!respuesta.error) {
-            
+            showSuccessBaner($('#telefono').val(), $('#direccion').val(), $('#barrio').val());
         } else {
-            
+            $('.alerta').html("<span>" + respuesta.msg + "<span>");
         }
     })
     .fail(function () {

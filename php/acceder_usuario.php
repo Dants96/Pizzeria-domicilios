@@ -18,7 +18,7 @@
                         $usuario = $consulta->get_result();
                         $usuario = $usuario->fetch_assoc();
                         require 'init_session.php';
-                        initSession($usuario['usr_nombre'], $usuario['usr_apellido'], $usuario['usr_telefono'], $usuario['usr_email'], $usuario['usr_fecha']);
+                        initSession($datos['ID'], $usuario['usr_nombre'], $usuario['usr_apellido'], $usuario['usr_telefono'], $usuario['usr_email'], $usuario['usr_fecha']);
                         echo(json_encode(array('error' => false, 'msg' => '')));
                     }
                 }else{
